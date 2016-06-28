@@ -260,7 +260,12 @@ module.exports = function(files) {
           cb()
         }
 
-        var name = path.basename(file).replace(/\.[a-zA-Z0-9]+$/, '')
+        var name;
+		if (opts.fullPath) 
+			name = file;
+		else 
+        	path.basename(file).replace(/\.[a-zA-Z0-9]+$/, '')
+        
         appendFile(name, tmp, tempFile, function(err) {
           if (rawparts != null ? rawparts.length : void 0) {
           async.forEachSeries(rawparts, function(ext, cb) {

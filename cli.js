@@ -17,6 +17,11 @@ var optimist = require('optimist')
   , 'default': ''
   , describe: 'Path for files to be used on final JSON.'
   })
+  .options('fullPath', {
+    alias: 'fp'
+  , 'default' : null,
+  , describe: 'Limit exported file types. Comma separated extension list.'
+  })
   .options('export', {
     alias: 'e'
   , 'default': 'ogg,m4a,mp3,ac3'
